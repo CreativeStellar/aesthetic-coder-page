@@ -36,7 +36,7 @@ function Reveal({ children, className = "", delay = 0 }: { children: React.React
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => e.isIntersecting && el.classList.add("in"), { threshold: 0.2 });
+    const io = new IntersectionObserver(([e]) => e?.isIntersecting && el.classList.add("in"), { threshold: 0.2 });
     io.observe(el);
     return () => io.disconnect();
   }, []);
